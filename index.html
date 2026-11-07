@@ -248,7 +248,7 @@ footer.site b{color:#fff}
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>人工发货</span>
         </div>
         <div class="price-box">
-          <div><small>全场统一价</small><span class="amt">¥ 19.99 元</span></div>
+          <div><small>地区账号低至</small><span class="amt">¥ 19.99 元</span></div>
           <button class="btn-buy-hero" data-nav="products">🛒 立即选购</button>
         </div>
       </div>
@@ -287,7 +287,7 @@ footer.site b{color:#fff}
   <div class="wrap">
     <p class="crumb"><button data-nav="home">首页</button> / 全部商品</p>
     <section class="block" style="padding-top:6px">
-      <div class="sec-head"><h2>全部商品</h2><p>全球多地区 Apple ID 账号 · 全场统一价 ¥19.99 · 未开通 iCloud，可下载 App</p></div>
+      <div class="sec-head"><h2>全部商品</h2><p>全球多地区 Apple ID 账号 · 地区账号 ¥19.99，带小火箭成品号 ¥39 · 未开通 iCloud，可下载 App</p></div>
       <div class="grid" id="allGrid"></div>
     </section>
     <div style="height:26px"></div>
@@ -302,7 +302,7 @@ footer.site b{color:#fff}
       <h2 style="margin:0 0 6px;font-size:23px">购买须知</h2>
       <h3>一、商品说明</h3>
       <ul>
-        <li>本店出售各地区 Apple ID 账号（美区、香港、中国区、日本区、台湾区、韩国区、澳大利亚区），全场统一价 ¥19.99。</li>
+        <li>本店出售各地区 Apple ID 账号（美区、香港、中国区、日本区、台湾区、韩国区、澳大利亚区），地区账号 ¥19.99；另有美区带小火箭（Shadowrocket）已购成品号 ¥39，售后 24 小时。</li>
         <li>所有账号<b>均未开通 iCloud</b>，仅用于登录 App Store 下载 App，请勿登录 iCloud。</li>
         <li>账号为独享账号，一人一号，可正常登录 App Store 下载应用，稳定可用。</li>
       </ul>
@@ -411,7 +411,7 @@ footer.site b{color:#fff}
 
 <footer class="site"><div class="wrap">
   <p style="margin:0 0 6px"><b>羊羊数字商城</b> · 专业的数字商品交易平台</p>
-  <p style="margin:0">全球 Apple ID 专区 · 未开通 iCloud · 可下载 App · 全场统一价 ¥19.99<br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
+  <p style="margin:0">全球 Apple ID 专区 · 未开通 iCloud · 可下载 App · 地区账号 ¥19.99 起<br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
 </div></footer>
 
 <!-- floating service -->
@@ -452,7 +452,8 @@ var BASE_PRODUCTS = [
   {id:"jp", flag:"🇯🇵", region:"日本区",   name:"日本区 Apple ID",   price:19.99},
   {id:"tw", flag:"🇹🇼", region:"台湾区",   name:"台湾区 Apple ID",   price:19.99},
   {id:"kr", flag:"🇰🇷", region:"韩国区",   name:"韩国区 Apple ID",   price:19.99},
-  {id:"au", flag:"🇦🇺", region:"澳大利亚区", name:"澳大利亚区 Apple ID", price:19.99}
+  {id:"au", flag:"🇦🇺", region:"澳大利亚区", name:"澳大利亚区 Apple ID", price:19.99},
+  {id:"us-rocket", flag:"🚀", region:"美区", name:"美区 Apple ID·带小火箭", price:39, desc:"已购 Shadowrocket 成品号 · 售后 24 小时"}
 ];
 
 function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }
@@ -504,7 +505,7 @@ document.addEventListener("click", function(e){
 /* ---------- products ---------- */
 function cardHTML(p){
   return '<div class="pcard"><div class="flag" data-open="'+p.id+'" title="查看详情">'+p.flag+'</div>'
-    + '<h3 data-open="'+p.id+'">'+p.name+'</h3><p class="desc">未开通 iCloud 可下载 App</p>'
+    + '<h3 data-open="'+p.id+'">'+p.name+'</h3><p class="desc">'+(p.desc || "未开通 iCloud 可下载 App")+'</p>'
     + '<div class="price">'+money(p.price)+'</div>'
     + '<button class="btn-primary" data-buy="'+p.id+'">立即购买</button>'
     + '<button class="btn-ghost" data-detail="'+p.id+'" style="padding:8px">查看详情</button></div>';
