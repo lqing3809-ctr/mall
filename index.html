@@ -248,7 +248,7 @@ footer.site b{color:#fff}
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>人工发货</span>
         </div>
         <div class="price-box">
-          <div><small>地区账号低至</small><span class="amt">¥ 19.99 元</span></div>
+          <div><small>全场低至</small><span class="amt" id="heroLow">¥ 8 起</span></div>
           <button class="btn-buy-hero" data-nav="products">🛒 立即选购</button>
         </div>
       </div>
@@ -416,7 +416,7 @@ footer.site b{color:#fff}
 
 <footer class="site"><div class="wrap">
   <p style="margin:0 0 6px"><b>羊羊数字商城</b> · 专业的数字商品交易平台</p>
-  <p style="margin:0">全球 Apple ID 专区 · 未开通 iCloud · 可下载 App · 地区账号 ¥19.99 起 · 微软邮箱 ¥8<br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
+  <p style="margin:0">全球 Apple ID 专区 · 未开通 iCloud · 可下载 App · <span id="footLow">全场 ¥8 起</span><br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
 </div></footer>
 
 <!-- floating service -->
@@ -520,6 +520,10 @@ function renderProducts(){
   var html = products.map(cardHTML).join("");
   document.getElementById("homeGrid").innerHTML = html;
   document.getElementById("allGrid").innerHTML = html;
+  var low = Math.min.apply(null, products.map(function(p){ return p.price; }));
+  var lowTxt = "¥" + (low % 1 === 0 ? low : low.toFixed(2)) + " 起";
+  var hl = document.getElementById("heroLow"); if(hl) hl.textContent = lowTxt;
+  var fl = document.getElementById("footLow"); if(fl) fl.textContent = "全场 " + lowTxt;
 }
 document.addEventListener("click", function(e){
   var open = e.target.closest("[data-open],[data-detail]");
