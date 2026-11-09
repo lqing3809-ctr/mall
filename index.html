@@ -73,6 +73,9 @@ nav.main button.active::after{content:"";position:absolute;left:13px;right:13px;
 section.block{padding:30px 0 8px}
 .sec-head h2{margin:0;font-size:24px}
 .sec-head p{margin:4px 0 18px;color:var(--muted);font-size:14px}
+.cat-bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.cat-bar button{padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:13.5px;color:var(--text)}
+.cat-bar button.on{background:#111827;color:#fff;border-color:#111827}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px 18px;text-align:center;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px}
 .pcard .flag{font-size:56px;line-height:1.15;cursor:pointer}
@@ -239,8 +242,8 @@ footer.site b{color:#fff}
   <div class="hero">
     <div class="wrap hero-in">
       <div>
-        <h1>全球 Apple ID 专区</h1>
-        <p class="sub">未开通 iCloud · 可下载 App</p>
+        <h1>全球账号数字商城</h1>
+        <p class="sub">Apple ID · 微软邮箱 · TikTok 账号 · 一人一号独享</p>
         <div class="badges">
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>安全可靠</span>
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>独享账号</span>
@@ -264,13 +267,14 @@ footer.site b{color:#fff}
 
   <div class="notice"><div class="wrap notice-in">
     <span class="n-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l14-5v12L3 13v-2z"/><path d="M7 13v5a2 2 0 004 0v-4"/></svg></span>
-    <span><b>公告：</b>本店所有账号均未开通 iCloud，仅可下载 App 使用，请放心购买！</span>
+    <span><b>公告：</b>本店 Apple ID 账号均未开通 iCloud，仅可下载 App 使用，请放心购买！</span>
     <span class="time">🕘 售后时间：每天 9:00 – 24:00</span>
   </div></div>
 
   <div class="wrap">
     <section class="block">
-      <div class="sec-head"><h2>热门商品</h2><p>全球多地区 Apple ID 账号</p></div>
+      <div class="sec-head"><h2>热门商品</h2><p>Apple ID · 微软邮箱 · TikTok 账号</p></div>
+      <div class="cat-bar"><button class="on" data-cat="all">全部商品</button><button data-cat="apple">Apple ID</button><button data-cat="mail">邮箱</button><button data-cat="tiktok">TikTok</button></div>
       <div class="grid" id="homeGrid"></div>
     </section>
     <div class="assure">
@@ -287,7 +291,8 @@ footer.site b{color:#fff}
   <div class="wrap">
     <p class="crumb"><button data-nav="home">首页</button> / 全部商品</p>
     <section class="block" style="padding-top:6px">
-      <div class="sec-head"><h2>全部商品</h2><p>Apple ID 账号 · 地区账号 ¥19.99，带小火箭成品号 ¥39，超长效微软邮箱 ¥8 · 未开通 iCloud，可下载 App</p></div>
+      <div class="sec-head"><h2>全部商品</h2><p>Apple ID 账号 · 微软邮箱 · TikTok 账号 · 全场 ¥8 起</p></div>
+      <div class="cat-bar"><button class="on" data-cat="all">全部商品</button><button data-cat="apple">Apple ID</button><button data-cat="mail">邮箱</button><button data-cat="tiktok">TikTok</button></div>
       <div class="grid" id="allGrid"></div>
     </section>
     <div style="height:26px"></div>
@@ -304,7 +309,8 @@ footer.site b{color:#fff}
       <ul>
         <li>本店出售各地区 Apple ID 账号（美区、香港、中国区、日本区、台湾区、韩国区、澳大利亚区），地区账号 ¥19.99；另有美区带小火箭（Shadowrocket）已购成品号 ¥39，售后 24 小时。</li>
         <li>另有超长效微软邮箱（@outlook）¥8：已解锁、超稳定，带令牌，支持 IMAP / POP3；卡密格式为 Email----Password----RefreshToken----Client_ID，登录 live.com，取邮件方法见商品详情；重要业务请及时改密码或绑定辅助邮箱。</li>
-        <li>所有账号<b>均未开通 iCloud</b>，仅用于登录 App Store 下载 App，请勿登录 iCloud。</li>
+        <li>另有 TikTok 越南账号 ¥16.9：账龄 7 天以上、已绑定手机，Hotmail / Outlook 邮箱带 2FA；卡密含 TK 账号与邮箱，包首登、售后 2 小时，登录与售后细则见商品详情。</li>
+        <li>Apple ID 账号<b>均未开通 iCloud</b>，仅用于登录 App Store 下载 App，请勿登录 iCloud。</li>
         <li>账号为独享账号，一人一号，可正常登录 App Store 下载应用，稳定可用。</li>
       </ul>
       <h3>二、购买与付款流程</h3>
@@ -321,7 +327,7 @@ footer.site b{color:#fff}
       </ul>
       <h3>四、重要提醒</h3>
       <ul>
-        <li>请勿使用本店账号登录 iCloud、查找我的 iPhone 等功能，以免造成锁定，与本店无关。</li>
+        <li>Apple ID 账号请勿登录 iCloud、查找我的 iPhone 等功能，以免造成锁定，与本店无关。</li>
         <li>请妥善保管收到的账号信息，不要外借、转卖。</li>
       </ul>
       <div class="warn-box">⚠️ 本店不在网站内收款：所有付款与发货都在微信 / WhatsApp 里与客服完成，请认准客服微信 Xapple88X、WhatsApp 13128547384。</div>
@@ -357,7 +363,7 @@ footer.site b{color:#fff}
     </div>
     <div class="panel guide-sec" style="margin-bottom:40px">
       <h3>商品说明</h3>
-      <ul>
+      <ul id="dGuide">
         <li>本店所有账号均未开通 iCloud，仅可下载 App 使用；</li>
         <li>账号为独享使用，请勿登录 iCloud；</li>
         <li>如遇问题，请在 24 小时内联系客服处理。</li>
@@ -367,7 +373,7 @@ footer.site b{color:#fff}
         <ul id="dSpec"></ul>
       </div>
       <h3>售后保障</h3>
-      <p>🕘 24小时售后　·　👤 人工客服　·　⚡ 快速响应　·　💬 问题包赔（以客服核实为准）</p>
+      <p id="dAfter">🕘 24小时售后　·　👤 人工客服　·　⚡ 快速响应　·　💬 问题包赔（以客服核实为准）</p>
     </div>
   </div>
 </main>
@@ -416,7 +422,7 @@ footer.site b{color:#fff}
 
 <footer class="site"><div class="wrap">
   <p style="margin:0 0 6px"><b>全球账号数字商城</b> · 专业的数字商品交易平台</p>
-  <p style="margin:0">全球 Apple ID 专区 · 未开通 iCloud · 可下载 App · <span id="footLow">全场 ¥8 起</span><br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
+  <p style="margin:0">全球账号数字商城 · Apple ID · 邮箱 · TikTok · <span id="footLow">全场 ¥8 起</span><br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
 </div></footer>
 
 <!-- floating service -->
@@ -451,15 +457,16 @@ function waLink(text){
 
 /* ---------- data ---------- */
 var BASE_PRODUCTS = [
-  {id:"us", flag:"🇺🇸", region:"美区",     name:"美区 Apple ID",     price:19.99},
-  {id:"hk", flag:"🇭🇰", region:"香港",     name:"香港区 Apple ID",   price:19.99},
-  {id:"cn", flag:"🇨🇳", region:"中国区",   name:"中国区 Apple ID",   price:19.99},
-  {id:"jp", flag:"🇯🇵", region:"日本区",   name:"日本区 Apple ID",   price:19.99},
-  {id:"tw", flag:"🇹🇼", region:"台湾区",   name:"台湾区 Apple ID",   price:19.99},
-  {id:"kr", flag:"🇰🇷", region:"韩国区",   name:"韩国区 Apple ID",   price:19.99},
-  {id:"au", flag:"🇦🇺", region:"澳大利亚区", name:"澳大利亚区 Apple ID", price:19.99},
-  {id:"us-rocket", flag:"🚀", region:"美区", name:"美区 Apple ID·带小火箭", price:39, desc:"已购 Shadowrocket 成品号 · 售后 24 小时"},
-  {id:"ms-outlook", flag:"📧", region:"微软", name:"超长效微软邮箱", price:8, desc:"已解锁 · 超稳定 · @outlook · 支持 IMAP / POP3", tags:["@outlook","已解锁","支持 IMAP / POP3"], points:["@outlook 邮箱，已解锁，超稳定","带令牌，支持 IMAP / POP3","卡密含 RefreshToken 与 Client_ID","质保购买后当天首次登录"], spec:["邮箱登录：live.com","卡密格式：Email----Password----RefreshToken----Client_ID","取邮件：ms.lqqq.cc/web/邮箱地址----邮箱密码（把邮箱地址和密码换成自己的，即可自动获取邮件）","⚠️ 重要业务请及时更改邮箱密码或绑定辅助邮箱；被盗号或转组织不负责","5% 概率出现二次锁定，仅质保购买后当天首次登录；当天出现不能跳过锁定的情况，联系客服换号"]}
+  {id:"us", flag:"🇺🇸", region:"美区",     name:"美区 Apple ID",     price:19.99, cat:"apple"},
+  {id:"hk", flag:"🇭🇰", region:"香港",     name:"香港区 Apple ID",   price:19.99, cat:"apple"},
+  {id:"cn", flag:"🇨🇳", region:"中国区",   name:"中国区 Apple ID",   price:19.99, cat:"apple"},
+  {id:"jp", flag:"🇯🇵", region:"日本区",   name:"日本区 Apple ID",   price:19.99, cat:"apple"},
+  {id:"tw", flag:"🇹🇼", region:"台湾区",   name:"台湾区 Apple ID",   price:19.99, cat:"apple"},
+  {id:"kr", flag:"🇰🇷", region:"韩国区",   name:"韩国区 Apple ID",   price:19.99, cat:"apple"},
+  {id:"au", flag:"🇦🇺", region:"澳大利亚区", name:"澳大利亚区 Apple ID", price:19.99, cat:"apple"},
+  {id:"us-rocket", flag:"🚀", region:"美区", name:"美区 Apple ID·带小火箭", price:39, cat:"apple", desc:"已购 Shadowrocket 成品号 · 售后 24 小时"},
+  {id:"ms-outlook", flag:"📧", region:"微软", name:"超长效微软邮箱", price:8, cat:"mail", desc:"已解锁 · 超稳定 · @outlook · 支持 IMAP / POP3", tags:["@outlook","已解锁","支持 IMAP / POP3"], points:["@outlook 邮箱，已解锁，超稳定","带令牌，支持 IMAP / POP3","卡密含 RefreshToken 与 Client_ID","质保购买后当天首次登录"], guide:["@outlook 邮箱，已解锁，超稳定；","带令牌，支持 IMAP / POP3；","重要业务请及时改密码或绑定辅助邮箱；","质保购买后当天首次登录，如遇问题请联系客服处理。"], spec:["邮箱登录：live.com","卡密格式：Email----Password----RefreshToken----Client_ID","取邮件：ms.lqqq.cc/web/邮箱地址----邮箱密码（把邮箱地址和密码换成自己的，即可自动获取邮件）","⚠️ 重要业务请及时更改邮箱密码或绑定辅助邮箱；被盗号或转组织不负责","5% 概率出现二次锁定，仅质保购买后当天首次登录；当天出现不能跳过锁定的情况，联系客服换号"]},
+  {id:"tiktok-vn", flag:"🇻🇳", region:"越南", name:"TikTok 越南账号", price:16.9, cat:"tiktok", desc:"账龄 7 天以上 · 已绑手机 · Hotmail/Outlook · 2FA", tags:["越南","账龄 7 天+","已绑手机","2FA"], points:["账龄 7 天以上，已绑定手机","Hotmail / Outlook 邮箱，带 2FA","卡密含 TK 账号与邮箱","包首登，售后 2 小时"], guide:["TK 账号与邮箱均已测试，所有功能均可正常使用；","购买后先在固定设备登录一段时间，确认无误后再改密码与邮箱密码；","售后 2 小时：包首登，首登录密码错误、封号包换。"], after:"🕘 售后 2 小时　·　👤 人工客服　·　⚡ 快速响应　·　💬 首登问题包换（以客服核实为准）", spec:["账号格式：TK 账号----TK 账号密码----邮箱----邮箱密码（包含一个 TK 账号和一个邮箱）","登录：tiktok.com/login 或手机 TikTok App；出现系统错误请稍后再试，或更换网络环境/设备","邮箱登录：网页无法登录时，建议用 Foxmail / 邮箱大师等客户端登录收件","购买后请在固定设备登录一段时间，确认账号、邮箱均正常后再改密码","售后 2 小时：包首登，首登录密码错误、封号包换；首登卡住多为环境污染","登录收取邮箱验证码，可自己登录卡密邮箱查收","请用干净 IP、单一设备登录，勿频繁变动 IP；单一设备/IP 登录多个账号、或有封号记录的环境继续登录，易风控，不售后","只保障可正常登录，不保证限流、粉丝属性；发布等违规操作导致风控不售后"]}
 ];
 
 function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }
@@ -516,8 +523,10 @@ function cardHTML(p){
     + '<button class="btn-primary" data-buy="'+p.id+'">立即购买</button>'
     + '<button class="btn-ghost" data-detail="'+p.id+'" style="padding:8px">查看详情</button></div>';
 }
+var currentCat = "all";
 function renderProducts(){
-  var html = products.map(cardHTML).join("");
+  var list = currentCat === "all" ? products : products.filter(function(p){ return p.cat === currentCat; });
+  var html = list.map(cardHTML).join("");
   document.getElementById("homeGrid").innerHTML = html;
   document.getElementById("allGrid").innerHTML = html;
   var low = Math.min.apply(null, products.map(function(p){ return p.price; }));
@@ -526,6 +535,13 @@ function renderProducts(){
   var fl = document.getElementById("footLow"); if(fl) fl.textContent = "全场 " + lowTxt;
 }
 document.addEventListener("click", function(e){
+  var cat = e.target.closest("[data-cat]");
+  if(cat){
+    currentCat = cat.getAttribute("data-cat");
+    document.querySelectorAll(".cat-bar button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-cat") === currentCat); });
+    renderProducts();
+    return;
+  }
   var open = e.target.closest("[data-open],[data-detail]");
   if(open){ openDetail(open.getAttribute("data-open") || open.getAttribute("data-detail")); return; }
   var buy = e.target.closest("[data-buy]");
@@ -544,6 +560,8 @@ function openDetail(id){
   document.getElementById("dPrice").textContent = money(p.price);
   document.getElementById("dTags").innerHTML = (p.tags || ["未开通 iCloud","可下载 App"]).map(function(t){ return '<span class="tag">'+t+'</span>'; }).join("");
   document.getElementById("dPoints").innerHTML = (p.points || ["账号未开通 iCloud","可登录 App Store 下载应用","独享账号，稳定可用","售后时间：24 小时"]).map(function(t){ return "<li>"+t+"</li>"; }).join("");
+  document.getElementById("dGuide").innerHTML = (p.guide || ["本店所有账号均未开通 iCloud，仅可下载 App 使用；","账号为独享使用，请勿登录 iCloud；","如遇问题，请在 24 小时内联系客服处理。"]).map(function(t){ return "<li>"+t+"</li>"; }).join("");
+  document.getElementById("dAfter").textContent = p.after || "🕘 24小时售后　·　👤 人工客服　·　⚡ 快速响应　·　💬 问题包赔（以客服核实为准）";
   var dSpecWrap = document.getElementById("dSpecWrap");
   if(p.spec){ document.getElementById("dSpec").innerHTML = p.spec.map(function(t){ return "<li>"+t+"</li>"; }).join(""); dSpecWrap.classList.remove("hidden"); }
   else { dSpecWrap.classList.add("hidden"); }
