@@ -287,7 +287,7 @@ footer.site b{color:#fff}
   <div class="wrap">
     <p class="crumb"><button data-nav="home">首页</button> / 全部商品</p>
     <section class="block" style="padding-top:6px">
-      <div class="sec-head"><h2>全部商品</h2><p>全球多地区 Apple ID 账号 · 地区账号 ¥19.99，带小火箭成品号 ¥39 · 未开通 iCloud，可下载 App</p></div>
+      <div class="sec-head"><h2>全部商品</h2><p>Apple ID 账号 · 地区账号 ¥19.99，带小火箭成品号 ¥39，超长效微软邮箱 ¥8 · 未开通 iCloud，可下载 App</p></div>
       <div class="grid" id="allGrid"></div>
     </section>
     <div style="height:26px"></div>
@@ -303,6 +303,7 @@ footer.site b{color:#fff}
       <h3>一、商品说明</h3>
       <ul>
         <li>本店出售各地区 Apple ID 账号（美区、香港、中国区、日本区、台湾区、韩国区、澳大利亚区），地区账号 ¥19.99；另有美区带小火箭（Shadowrocket）已购成品号 ¥39，售后 24 小时。</li>
+        <li>另有超长效微软邮箱（@outlook）¥8：已解锁、超稳定，带令牌，支持 IMAP / POP3；卡密格式为 Email----Password----RefreshToken----Client_ID，登录 live.com，取邮件方法见商品详情；重要业务请及时改密码或绑定辅助邮箱。</li>
         <li>所有账号<b>均未开通 iCloud</b>，仅用于登录 App Store 下载 App，请勿登录 iCloud。</li>
         <li>账号为独享账号，一人一号，可正常登录 App Store 下载应用，稳定可用。</li>
       </ul>
@@ -337,9 +338,9 @@ footer.site b{color:#fff}
         <div class="detail-flag" id="dFlag">🇺🇸</div>
         <div>
           <h2 id="dName" style="margin:2px 0 6px;font-size:24px">美区 Apple ID</h2>
-          <div><span class="tag">未开通 iCloud</span><span class="tag">可下载 App</span></div>
+          <div id="dTags"><span class="tag">未开通 iCloud</span><span class="tag">可下载 App</span></div>
           <div class="detail-price" id="dPrice">¥19.99</div>
-          <ul class="check-list">
+          <ul class="check-list" id="dPoints">
             <li>账号未开通 iCloud</li>
             <li>可登录 App Store 下载应用</li>
             <li>独享账号，稳定可用</li>
@@ -361,6 +362,10 @@ footer.site b{color:#fff}
         <li>账号为独享使用，请勿登录 iCloud；</li>
         <li>如遇问题，请在 24 小时内联系客服处理。</li>
       </ul>
+      <div id="dSpecWrap" class="hidden">
+        <h3>产品详细信息</h3>
+        <ul id="dSpec"></ul>
+      </div>
       <h3>售后保障</h3>
       <p>🕘 24小时售后　·　👤 人工客服　·　⚡ 快速响应　·　💬 问题包赔（以客服核实为准）</p>
     </div>
@@ -411,7 +416,7 @@ footer.site b{color:#fff}
 
 <footer class="site"><div class="wrap">
   <p style="margin:0 0 6px"><b>羊羊数字商城</b> · 专业的数字商品交易平台</p>
-  <p style="margin:0">全球 Apple ID 专区 · 未开通 iCloud · 可下载 App · 地区账号 ¥19.99 起<br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
+  <p style="margin:0">全球 Apple ID 专区 · 未开通 iCloud · 可下载 App · 地区账号 ¥19.99 起 · 微软邮箱 ¥8<br>微信客服：Xapple88X　|　售后时间：每天 9:00 – 24:00　|　人工发货</p>
 </div></footer>
 
 <!-- floating service -->
@@ -453,7 +458,8 @@ var BASE_PRODUCTS = [
   {id:"tw", flag:"🇹🇼", region:"台湾区",   name:"台湾区 Apple ID",   price:19.99},
   {id:"kr", flag:"🇰🇷", region:"韩国区",   name:"韩国区 Apple ID",   price:19.99},
   {id:"au", flag:"🇦🇺", region:"澳大利亚区", name:"澳大利亚区 Apple ID", price:19.99},
-  {id:"us-rocket", flag:"🚀", region:"美区", name:"美区 Apple ID·带小火箭", price:39, desc:"已购 Shadowrocket 成品号 · 售后 24 小时"}
+  {id:"us-rocket", flag:"🚀", region:"美区", name:"美区 Apple ID·带小火箭", price:39, desc:"已购 Shadowrocket 成品号 · 售后 24 小时"},
+  {id:"ms-outlook", flag:"📧", region:"微软", name:"超长效微软邮箱", price:8, desc:"已解锁 · 超稳定 · @outlook · 支持 IMAP / POP3", tags:["@outlook","已解锁","支持 IMAP / POP3"], points:["@outlook 邮箱，已解锁，超稳定","带令牌，支持 IMAP / POP3","卡密含 RefreshToken 与 Client_ID","质保购买后当天首次登录"], spec:["邮箱登录：live.com","卡密格式：Email----Password----RefreshToken----Client_ID","取邮件：ms.lqqq.cc/web/邮箱地址----邮箱密码（把邮箱地址和密码换成自己的，即可自动获取邮件）","⚠️ 重要业务请及时更改邮箱密码或绑定辅助邮箱；被盗号或转组织不负责","5% 概率出现二次锁定，仅质保购买后当天首次登录；当天出现不能跳过锁定的情况，联系客服换号"]}
 ];
 
 function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }
@@ -532,6 +538,11 @@ function openDetail(id){
   document.getElementById("dName").textContent = p.name;
   document.getElementById("dCrumb").textContent = p.name;
   document.getElementById("dPrice").textContent = money(p.price);
+  document.getElementById("dTags").innerHTML = (p.tags || ["未开通 iCloud","可下载 App"]).map(function(t){ return '<span class="tag">'+t+'</span>'; }).join("");
+  document.getElementById("dPoints").innerHTML = (p.points || ["账号未开通 iCloud","可登录 App Store 下载应用","独享账号，稳定可用","售后时间：24 小时"]).map(function(t){ return "<li>"+t+"</li>"; }).join("");
+  var dSpecWrap = document.getElementById("dSpecWrap");
+  if(p.spec){ document.getElementById("dSpec").innerHTML = p.spec.map(function(t){ return "<li>"+t+"</li>"; }).join(""); dSpecWrap.classList.remove("hidden"); }
+  else { dSpecWrap.classList.add("hidden"); }
   show("detail");
 }
 document.getElementById("dMinus").addEventListener("click", function(){ if(dQty>1){ dQty--; document.getElementById("dQty").textContent = dQty; } });
@@ -567,7 +578,7 @@ function renderCart(){
   box.innerHTML = cart.map(function(c, i){
     var p = prodById(c.id); if(!p) return "";
     total += p.price * c.qty;
-    return '<div class="cart-row"><span class="flag">'+p.flag+'</span><div class="grow"><b>'+p.name+'</b><div class="hint">未开通 iCloud 可下载 App</div></div>'
+    return '<div class="cart-row"><span class="flag">'+p.flag+'</span><div class="grow"><b>'+p.name+'</b><div class="hint">'+(p.desc || "未开通 iCloud 可下载 App")+'</div></div>'
       + '<div class="qty"><button data-cminus="'+i+'">−</button><span>'+c.qty+'</span><button data-cplus="'+i+'">+</button></div>'
       + '<b style="min-width:70px;text-align:right;color:var(--price)">'+money(p.price*c.qty)+'</b>'
       + '<button class="link-btn" data-cremove="'+i+'">删除</button></div>';
