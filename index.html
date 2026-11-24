@@ -8,13 +8,13 @@
 <title>全球账号会员数字商城</title>
 <style>
 :root{
-  --bg:#0a0a0c; --card:#17171c; --card2:#1f1f26; --text:#f4efe3; --muted:#a79d88; --line:#2e2a20;
-  --brand:#c9a227; --brand2:#e8c766; --brand-grad:linear-gradient(120deg,#a8821c,#d4af37 55%,#f0d67c);
-  --price:#e8c766; --ok:#16a34a; --warn:#f59e0b; --danger:#dc2626;
-  --radius:14px; --shadow:0 8px 28px rgba(0,0,0,.45);
+  --bg:#f5f5f7; --card:#ffffff; --card2:#f5f5f7; --text:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7;
+  --brand:#0071e3; --brand2:#42a5f5; --brand-grad:linear-gradient(120deg,#0071e3,#2f8ded 55%,#7dc4ff);
+  --price:#0071e3; --ok:#16a34a; --warn:#f59e0b; --danger:#dc2626;
+  --radius:14px; --shadow:0 8px 28px rgba(0,0,0,.08);
 }
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#0a0a0c; --card:#17171c; --card2:#1f1f26; --text:#f4efe3; --muted:#a79d88; --line:#2e2a20; --shadow:0 8px 28px rgba(0,0,0,.45); }
+  :root{ --bg:#f5f5f7; --card:#ffffff; --card2:#f5f5f7; --text:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7; --shadow:0 8px 28px rgba(0,0,0,.08); }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -26,40 +26,40 @@ a{color:inherit}
 .hidden{display:none !important}
 
 /* ===== Header ===== */
-header.site{position:sticky;top:0;z-index:60;background:linear-gradient(100deg,#050505,#111110 55%,#1a1710);color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.55)}
+header.site{position:sticky;top:0;z-index:60;background:rgba(251,251,253,.92);backdrop-filter:blur(12px);color:#1d1d1f;box-shadow:0 4px 20px rgba(0,0,0,.08);border-bottom:1px solid #e5e5ea}
 .header-in{display:flex;align-items:center;gap:18px;padding:12px 0;flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:10px;cursor:pointer;background:none;border:0;color:#fff;text-align:left;padding:0}
-.logo-badge{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#a8821c,#f0d67c);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 18px rgba(212,175,55,.55);flex:none}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;background:none;border:0;color:#1d1d1f;text-align:left;padding:0}
+.logo-badge{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#0071e3,#42a5f5);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 18px rgba(0,113,227,.35);flex:none}
 .logo b{font-size:19px;letter-spacing:.5px;display:block;line-height:1.2}
 .logo span{font-size:11px;opacity:.75;display:block}
 nav.main{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
-nav.main button{background:none;border:0;color:#d8d2c0;padding:8px 13px;font-size:15px;border-radius:8px;position:relative}
-nav.main button:hover{color:#fff}
-nav.main button.active{color:#fff;font-weight:700}
-nav.main button.active::after{content:"";position:absolute;left:13px;right:13px;bottom:2px;height:3px;border-radius:3px;background:linear-gradient(90deg,#a8821c,#f0d67c)}
+nav.main button{background:none;border:0;color:#515154;padding:8px 13px;font-size:15px;border-radius:8px;position:relative}
+nav.main button:hover{color:#000}
+nav.main button.active{color:#1d1d1f;font-weight:700}
+nav.main button.active::after{content:"";position:absolute;left:13px;right:13px;bottom:2px;height:3px;border-radius:3px;background:linear-gradient(90deg,#0071e3,#42a5f5)}
 .header-actions{display:flex;gap:8px;align-items:center}
-.btn-admin{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:9px;padding:8px 14px;font-size:14px}
-.btn-admin:hover{background:rgba(255,255,255,.18)}
-.btn-cart{background:linear-gradient(120deg,#a8821c,#e8c766);border:0;color:#1c1607;border-radius:9px;padding:9px 16px;font-size:14px;display:flex;gap:7px;align-items:center}
-.cart-count{background:#0a0a0c;color:#e8c766;border:1px solid #c9a227;border-radius:999px;min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;padding:0 5px}
+.btn-admin{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.18);color:#1d1d1f;border-radius:9px;padding:8px 14px;font-size:14px}
+.btn-admin:hover{background:rgba(0,0,0,.08)}
+.btn-cart{background:linear-gradient(120deg,#0071e3,#2f8ded);border:0;color:#ffffff;border-radius:9px;padding:9px 16px;font-size:14px;display:flex;gap:7px;align-items:center}
+.cart-count{background:#ffffff;color:#0071e3;border:1px solid #0071e3;border-radius:999px;min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;padding:0 5px}
 
 /* ===== Hero ===== */
-.hero{background:radial-gradient(900px 420px at 78% 30%,rgba(212,175,55,.26),transparent 60%),radial-gradient(700px 400px at 15% 90%,rgba(212,175,55,.14),transparent 60%),linear-gradient(120deg,#050505,#0e0e10 55%,#16130b);color:#fff;overflow:hidden}
+.hero{background:radial-gradient(900px 420px at 78% 30%,rgba(0,113,227,.12),transparent 60%),radial-gradient(700px 400px at 15% 90%,rgba(0,113,227,.07),transparent 60%),linear-gradient(120deg,#ffffff,#f5f5f7 55%,#eef4fb);color:#1d1d1f;overflow:hidden}
 .hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;padding:44px 0 48px;align-items:center}
 .hero h1{font-size:42px;margin:0 0 10px;letter-spacing:1px;line-height:1.15}
 .hero .sub{font-size:19px;opacity:.92;margin:0 0 18px}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
-.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);border-radius:999px;padding:5px 12px;font-size:13px}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.14);background:rgba(255,255,255,.65);border-radius:999px;padding:5px 12px;font-size:13px}
 .badge svg{width:14px;height:14px;flex:none}
-.price-box{display:inline-flex;align-items:center;gap:22px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);border-radius:14px;padding:14px 20px;flex-wrap:wrap}
+.price-box{display:inline-flex;align-items:center;gap:22px;border:1px solid rgba(0,0,0,.10);background:rgba(255,255,255,.7);border-radius:14px;padding:14px 20px;flex-wrap:wrap}
 .price-box small{display:block;font-size:13px;opacity:.8}
 .price-box .amt{font-size:28px;font-weight:800;line-height:1.1}
-.btn-buy-hero{background:linear-gradient(120deg,#a8821c,#e8c766);border:0;color:#1c1607;border-radius:999px;padding:12px 26px;font-size:16px;font-weight:700;box-shadow:0 8px 24px rgba(212,175,55,.4)}
+.btn-buy-hero{background:linear-gradient(120deg,#0071e3,#2f8ded);border:0;color:#ffffff;border-radius:999px;padding:12px 26px;font-size:16px;font-weight:700;box-shadow:0 8px 24px rgba(0,113,227,.35)}
 .hero-art{display:flex;align-items:center;justify-content:center;min-height:250px}
 .apple-stage{position:relative;width:260px;height:260px}
-.apple-ring{position:absolute;inset:28px;border-radius:50%;background:radial-gradient(circle at 50% 35%,rgba(240,214,124,.5),rgba(201,162,39,.18) 55%,transparent 72%);box-shadow:0 0 70px rgba(212,175,55,.55),inset 0 0 40px rgba(212,175,55,.3)}
+.apple-ring{position:absolute;inset:28px;border-radius:50%;background:radial-gradient(circle at 50% 35%,rgba(125,196,255,.5),rgba(0,113,227,.14) 55%,transparent 72%);box-shadow:0 0 70px rgba(0,113,227,.30),inset 0 0 40px rgba(0,113,227,.18)}
 .apple-disc{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:210px;height:34px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(232,199,102,.85),rgba(201,162,39,.25) 65%,transparent);filter:blur(1px)}
-.apple-svg{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:128px;height:128px;filter:drop-shadow(0 0 22px rgba(212,175,55,.95)) drop-shadow(0 10px 26px rgba(88,28,200,.6))}
+.apple-svg{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:128px;height:128px;filter:drop-shadow(0 0 22px rgba(0,113,227,.30)) drop-shadow(0 10px 26px rgba(0,0,0,.18))}
 .chip-float{position:absolute;background:rgba(12,12,14,.82);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:7px 10px;font-size:16px;backdrop-filter:blur(4px)}
 .chip-float.c1{top:6px;right:22px}.chip-float.c2{top:56px;left:-6px}.chip-float.c3{bottom:44px;right:-2px}.chip-float.c4{top:12px;left:44px}
 
@@ -75,7 +75,7 @@ section.block{padding:30px 0 8px}
 .sec-head p{margin:4px 0 18px;color:var(--muted);font-size:14px}
 .cat-bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
 .cat-bar button{padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:13.5px;color:var(--text)}
-.cat-bar button.on{background:linear-gradient(120deg,#a8821c,#e8c766);color:#1c1607;border-color:#c9a227;font-weight:700}
+.cat-bar button.on{background:linear-gradient(120deg,#0071e3,#2f8ded);color:#ffffff;border-color:#0071e3;font-weight:700}
 .qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 .qr-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
 .qr-card img{width:100%;max-width:300px;border-radius:10px;display:block;margin:0 auto 10px}
@@ -88,15 +88,15 @@ section.block{padding:30px 0 8px}
 .pcard h3{margin:4px 0 0;font-size:17px;cursor:pointer}
 .pcard .desc{color:var(--muted);font-size:13px;margin:0}
 .pcard .price{color:var(--price);font-size:21px;font-weight:800;margin:6px 0 8px}
-.btn-primary{background:var(--brand-grad);border:0;color:#1c1607;border-radius:9px;padding:11px 16px;font-weight:700;font-size:15px;width:100%}
+.btn-primary{background:var(--brand-grad);border:0;color:#ffffff;border-radius:9px;padding:11px 16px;font-weight:700;font-size:15px;width:100%}
 .btn-primary:hover{opacity:.92}
 .btn-ghost{background:var(--card);border:1.5px solid var(--brand);color:var(--brand);border-radius:9px;padding:10px 16px;font-weight:700;font-size:15px}
 .btn-green{background:#22c55e;border:0;color:#fff;border-radius:9px;padding:11px 16px;font-weight:700}
 .btn-wa{background:#25d366;border:0;color:#fff;border-radius:9px;padding:11px 16px;font-weight:700}
 .assure{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:26px 0 34px}
 .assure .a-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;gap:12px;align-items:flex-start}
-.assure .a-ic{width:44px;height:44px;border-radius:50%;background:rgba(201,162,39,.16);color:var(--brand);display:flex;align-items:center;justify-content:center;flex:none}
-@media (prefers-color-scheme: dark){.assure .a-ic{background:rgba(201,162,39,.16)}}
+.assure .a-ic{width:44px;height:44px;border-radius:50%;background:rgba(0,113,227,.12);color:var(--brand);display:flex;align-items:center;justify-content:center;flex:none}
+
 .assure b{display:block;font-size:16px}
 .assure span{color:var(--muted);font-size:13px}
 
@@ -126,12 +126,12 @@ input.in:focus,textarea.in:focus{border-color:var(--brand)}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .detail-flag{font-size:110px;text-align:center;background:var(--card2);border:1px solid var(--line);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;min-height:230px}
 .tag{display:inline-block;background:#e8f7ee;color:#15803d;border-radius:6px;padding:2px 8px;font-size:12px;margin-right:6px}
-@media (prefers-color-scheme: dark){.tag{background:#14301d;color:#4ade80}}
+
 .detail-price{color:var(--price);font-size:30px;font-weight:800;margin:8px 0}
 
 /* order success */
 .qr-ph{width:170px;height:170px;border:2px dashed #b9bce0;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-size:13px;text-align:center;padding:12px;background:repeating-conic-gradient(#eceefb 0% 25%, #f7f7ff 0% 50%) 0 0/22px 22px}
-@media (prefers-color-scheme: dark){.qr-ph{background:repeating-conic-gradient(#23233c 0% 25%, #1c1c30 0% 50%) 0 0/22px 22px}}
+
 .status-flow{display:flex;align-items:flex-start;margin:22px 0 6px}
 .sf-step{flex:1;text-align:center;position:relative}
 .sf-step .dot{width:34px;height:34px;border-radius:50%;background:var(--card2);border:2px solid var(--line);display:inline-flex;align-items:center;justify-content:center;font-size:15px;position:relative;z-index:1;color:var(--muted)}
@@ -142,8 +142,8 @@ input.in:focus,textarea.in:focus{border-color:var(--brand)}
 .sf-step span{display:block;font-size:13px;margin-top:7px;color:var(--muted)}
 .sf-step.done span{color:var(--text);font-weight:700}
 .pill{display:inline-block;border-radius:999px;padding:2px 11px;font-size:12.5px;font-weight:700}
-.pill.wait{background:#fef3c7;color:#b45309}.pill.paid{background:#dbeafe;color:#1d4ed8}.pill.ship{background:#3a2f10;color:#e8c766}.pill.done{background:#dcfce7;color:#15803d}.pill.cancel{background:#fee2e2;color:#b91c1c}
-@media (prefers-color-scheme: dark){.pill.wait{background:#3a2f10}.pill.paid{background:#16294d}.pill.ship{background:#2c1e54}.pill.done{background:#12331c}.pill.cancel{background:#3d1717}}
+.pill.wait{background:#fef3c7;color:#b45309}.pill.paid{background:#dbeafe;color:#1d4ed8}.pill.ship{background:#e0f2fe;color:#0369a1}.pill.done{background:#dcfce7;color:#15803d}.pill.cancel{background:#fee2e2;color:#b91c1c}
+
 
 /* cart */
 .cart-row{display:flex;gap:14px;align-items:center;border-bottom:1px solid var(--line);padding:14px 0}
@@ -154,11 +154,11 @@ input.in:focus,textarea.in:focus{border-color:var(--brand)}
 
 /* admin */
 .admin-layout{display:grid;grid-template-columns:210px 1fr;gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin:22px 0 40px}
-.admin-side{background:linear-gradient(180deg,#141238,#1e1a5e);color:#d6d8ff;padding:20px 12px;min-height:560px}
+.admin-side{background:linear-gradient(180deg,#2c2c2e,#1d1d1f);color:#e8e8ed;padding:20px 12px;min-height:560px}
 .admin-side .shop{font-weight:800;color:#fff;font-size:16px;padding:2px 10px 2px}
 .admin-side .shop small{display:block;font-weight:400;font-size:12px;opacity:.65;margin-bottom:14px}
-.admin-side button{display:flex;gap:9px;align-items:center;width:100%;background:none;border:0;color:#d8d2c0;text-align:left;padding:11px 12px;border-radius:9px;font-size:14.5px;margin-bottom:2px}
-.admin-side button.on{background:linear-gradient(120deg,#a8821c,#e8c766);color:#fff;font-weight:700}
+.admin-side button{display:flex;gap:9px;align-items:center;width:100%;background:none;border:0;color:#d1d1d6;text-align:left;padding:11px 12px;border-radius:9px;font-size:14.5px;margin-bottom:2px}
+.admin-side button.on{background:linear-gradient(120deg,#0071e3,#2f8ded);color:#fff;font-weight:700}
 .admin-main{padding:22px;min-width:0}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
 .stat{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:16px}
@@ -176,7 +176,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px}
 .search-row{display:flex;gap:8px;margin-bottom:14px}
 .search-row input{flex:1}
 .btn-dark{background:#23233f;color:#fff;border:0;border-radius:9px;padding:0 22px;font-weight:600}
-@media (prefers-color-scheme: dark){.btn-dark{background:#3b3b5e}}
+
 
 /* floating service */
 .fab{position:fixed;right:18px;bottom:20px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
@@ -201,7 +201,7 @@ footer.site b{color:#fff}
 .guide-sec p,.guide-sec li{font-size:14.5px;color:var(--text)}
 .guide-sec ul{padding-left:20px;margin:6px 0}
 .warn-box{background:#fff7e6;border:1px solid #f5d9a8;border-radius:12px;padding:14px 16px;font-size:14px;margin-top:16px}
-@media (prefers-color-scheme: dark){.warn-box{background:#33270e;border-color:#6b5518}}
+
 
 @media (max-width:900px){
   .grid{grid-template-columns:repeat(2,1fr)}
@@ -264,7 +264,7 @@ footer.site b{color:#fff}
       <div class="hero-art" aria-hidden="true">
         <div class="apple-stage">
           <div class="apple-ring"></div><div class="apple-disc"></div>
-          <svg class="apple-svg" viewBox="0 0 384 512"><defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d67c"/><stop offset=".55" stop-color="#d4af37"/><stop offset="1" stop-color="#a8821c"/></linearGradient></defs><path fill="url(#ag)" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <svg class="apple-svg" viewBox="0 0 384 512"><defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#48484a"/><stop offset=".55" stop-color="#1d1d1f"/><stop offset="1" stop-color="#000000"/></linearGradient></defs><path fill="url(#ag)" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
           <span class="chip-float c1">👤</span><span class="chip-float c2">🛡️</span><span class="chip-float c3">🎵</span><span class="chip-float c4">⬇️</span>
         </div>
       </div>
@@ -279,9 +279,9 @@ footer.site b{color:#fff}
 
   <div class="wrap">
     <section class="block" style="padding-bottom:0">
-      <a href="https://47.243.165.123:56783/#/register?code=cQbfMsau" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(120deg,#17171c,#1d1807);border:1.5px solid #c9a227;border-radius:16px;padding:16px 18px;text-decoration:none;color:#f4efe3;box-shadow:0 6px 24px rgba(201,162,39,.18)">
+      <a href="https://47.243.165.123:56783/#/register?code=cQbfMsau" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(120deg,#ffffff,#eef4fb);border:1.5px solid #0071e3;border-radius:16px;padding:16px 18px;text-decoration:none;color:#1d1d1f;box-shadow:0 6px 24px rgba(0,113,227,.15)">
         <span>🚀 <b style="font-size:16.5px">梯子节点推荐 · 大狗云</b>（店主自用）<br><span style="opacity:.85;font-size:13.5px">买了海外账号还差一个稳定节点：年付 ¥99 / 1000G 大流量，客服 24 小时在线，配套 Apps Connect 一键导入</span><br><span style="opacity:.6;font-size:12px">节点为第三方服务，连接 / 续费问题请找大狗云官方客服；本店只负责账号类商品</span></span>
-        <span style="background:linear-gradient(120deg,#a8821c,#e8c766);color:#1c1607;font-weight:700;border-radius:999px;padding:10px 18px;white-space:nowrap">点击注册购买 ›</span>
+        <span style="background:linear-gradient(120deg,#0071e3,#2f8ded);color:#ffffff;font-weight:700;border-radius:999px;padding:10px 18px;white-space:nowrap">点击注册购买 ›</span>
       </a>
     </section>
     <section class="block">
@@ -304,17 +304,17 @@ footer.site b{color:#fff}
     </section>
     <section class="block" style="margin-top:26px">
       <div class="sec-head"><h2>使用教程</h2><p>买到账号先看教程 · 登录、验证、常见问题都有</p></div>
-      <a href="https://lqing3809-ctr.github.io/-articles/tiktok-account-login-guide.html" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#17171c;border-radius:14px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#f4efe3;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>🎵 <b>TikTok 账号买到后怎么登录？</b> 邮箱登录全流程</span><span style="color:#c9a227;white-space:nowrap">查看 ›</span></a>
-      <a href="https://lqing3809-ctr.github.io/-articles/apple-id-no-2fa-cannot-login.html" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#17171c;border-radius:14px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#f4efe3;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>🍎 <b>没开双重认证的 Apple ID 登不上了？</b> 先别反复试</span><span style="color:#c9a227;white-space:nowrap">查看 ›</span></a>
-      <a href="https://lqing3809-ctr.github.io/-articles/iphone-apple-id-verification-tips.html" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#17171c;border-radius:14px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#f4efe3;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>🔐 <b>Apple ID 登录「验证失败」？</b> 4 步开启双重认证</span><span style="color:#c9a227;white-space:nowrap">查看 ›</span></a>
-      <a href="https://lqing3809-ctr.github.io/-articles/" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#17171c;border-radius:14px;padding:14px 16px;text-decoration:none;color:#f4efe3;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>📚 <b>全部教程</b> Apple ID · App Store 使用指南</span><span style="color:#c9a227;white-space:nowrap">查看 ›</span></a>
+      <a href="https://lqing3809-ctr.github.io/-articles/tiktok-account-login-guide.html" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-radius:14px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#1d1d1f;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>🎵 <b>TikTok 账号买到后怎么登录？</b> 邮箱登录全流程</span><span style="color:#0071e3;white-space:nowrap">查看 ›</span></a>
+      <a href="https://lqing3809-ctr.github.io/-articles/apple-id-no-2fa-cannot-login.html" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-radius:14px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#1d1d1f;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>🍎 <b>没开双重认证的 Apple ID 登不上了？</b> 先别反复试</span><span style="color:#0071e3;white-space:nowrap">查看 ›</span></a>
+      <a href="https://lqing3809-ctr.github.io/-articles/iphone-apple-id-verification-tips.html" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-radius:14px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#1d1d1f;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>🔐 <b>Apple ID 登录「验证失败」？</b> 4 步开启双重认证</span><span style="color:#0071e3;white-space:nowrap">查看 ›</span></a>
+      <a href="https://lqing3809-ctr.github.io/-articles/" target="_blank" style="display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-radius:14px;padding:14px 16px;text-decoration:none;color:#1d1d1f;box-shadow:0 2px 12px rgba(0,0,0,.05)"><span>📚 <b>全部教程</b> Apple ID · App Store 使用指南</span><span style="color:#0071e3;white-space:nowrap">查看 ›</span></a>
     </section>
     <section class="block" style="margin-top:26px">
       <div class="sec-head"><h2>其他平台账号咨询</h2><p>没挂在商城里的平台，也可以问问 · 有货会补货</p></div>
-      <div style="background:#17171c;border-radius:14px;padding:18px 16px;box-shadow:0 2px 12px rgba(0,0,0,.05)">
+      <div style="background:#ffffff;border-radius:14px;padding:18px 16px;box-shadow:0 2px 12px rgba(0,0,0,.05)">
         <p style="margin:0 0 6px"><b>想要的账号没在商城上架？</b></p>
         <p style="margin:0 0 14px;color:#a79d88;line-height:1.7">X（推特）、领英 LinkedIn 等其他平台的账号没有固定上架，但这边经常有货、也会不定期补货。直接联系客服问一句就行，有货就给你安排。</p>
-        <button data-nav="contact" style="background:linear-gradient(120deg,#a8821c,#e8c766);color:#1c1607;border:none;border-radius:999px;padding:12px 26px;font-size:16px;font-weight:600;cursor:pointer">联系客服咨询</button>
+        <button data-nav="contact" style="background:linear-gradient(120deg,#0071e3,#2f8ded);color:#ffffff;border:none;border-radius:999px;padding:12px 26px;font-size:16px;font-weight:600;cursor:pointer">联系客服咨询</button>
       </div>
     </section>
   </div>
